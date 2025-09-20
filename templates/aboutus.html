@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkVision</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='aboutus.css') }}">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="nav-container">
+                <div class="logo-container">
+                    <img src="{{ url_for('static', filename='Assets/WebLogo.png') }}" alt="ParkVision Logo">
+                </div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('upload') }}">Result</a></li>
+                        <li><a href="{{ url_for('aboutus') }}">About Us</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="{{ url_for('register') }}" class="register-btn">Register</a>
+                </div>
+            </div>
+        </header>
+
+        <section id="about-us">
+            <div class="about-container">
+                <h1 class="about-title">ABOUT US</h1>
+                <p class="about-description">
+                    ParkVision is a cutting-edge AI platform developed to detect early signs of Parkinson's Disease 
+                    using drawing pattern analysis. By analyzing simple sketches like spirals and wave lines, 
+                    ParkVision leverages advanced machine learning algorithms to identify tremor patterns 
+                    that might indicate early stages of Parkinson's Disease.
+                </p>
+                <p class="about-description">
+                    Our mission is to empower individuals and healthcare professionals with accessible, 
+                    user-friendly tools for early screening and better symptom management. At ParkVision, 
+                    we believe that technology can bridge the gap in early detection, providing insights 
+                    that lead to timely medical intervention and improved patient outcomes.
+                </p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="social-icons">
+                        <a href="https://www.twitter.com" target="_blank">
+                            <img src="{{ url_for('static', filename='Assets/XWLogo.png') }}" alt="X Logo">
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img src="{{ url_for('static', filename='Assets/IGW Logo.png') }}" alt="Instagram Logo">
+                        </a>
+                        <a href="https://www.youtube.com" target="_blank">
+                            <img src="{{ url_for('static', filename='Assets/YTW Logo.png') }}" alt="YouTube Logo">
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank">
+                            <img src="{{ url_for('static', filename='Assets/LinkedInW Logo.png') }}" alt="LinkedIn Logo">
+                        </a>
+                    </div>                    
+                    <p class="footer-title">ParkVision</p>
+                    <p class="footer-description">
+                        ParkVision is an AI platform that uses image analysis of drawing tests to detect early Parkinson’s tremor patterns, aiding accurate diagnosis and improved patient outcomes.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="explore">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="{{ url_for('home') }}">Home</a></li>
+                            <li><a href="{{ url_for('upload') }}">Result</a></li>
+                            <li><a href="{{ url_for('aboutus') }}">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="resources">
+                        <h4>Resources</h4>
+                        <a href="#">FAQs</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Help Center</a>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-copyright">
+                &copy; 2024 ParkVision. All Rights Reserved.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

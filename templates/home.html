@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkVision</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="nav-container">
+                <div class="logo-container">
+                    <img src="{{ url_for('static', filename='Assets/WebLogo.png') }}" alt="ParkVision Logo">
+                </div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('upload') }}">Result</a></li>
+                        <li><a href="{{ url_for('aboutus') }}">About Us</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="{{ url_for('register') }}" class="register-btn">Register</a>
+                </div>
+            </div>
+        </header>
+
+        <section id="welcome">
+            <div class="intro">
+                <h2>Welcome to ParkVision!</h2>
+                <p>ParkVision is an AI platform that uses image analysis of drawing tests to detect early Parkinson’s tremor patterns, aiding accurate diagnosis and improved patient outcomes.</p>
+                <a href="{{ url_for('upload') }}" class="start-button">Start Simulation</a>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-item">
+                <h3>Over 10 million people worldwide live with Parkinson's Disease.</h3>
+            </div>
+            <div class="stat-item">
+                <h3>14.2 per 100,000 people are diagnosed with Parkinson's yearly in Indonesia.</h3>
+            </div>
+            <div class="stat-item">
+                <h3>Parkinson's is progressive and has no cure yet—managing symptoms is key!</h3>
+            </div>
+        </section>
+
+        <section class="how-to" id="how-to">
+            <div class="how-to-container">
+                <div class="how-to-header">
+                    <h2>How to do the Test!</h2>
+                    <p>It's very simple and quick!</p>
+                </div>
+                <div class="how-to-content">
+                    <ol class="how-to-steps">
+                        <li><span>#1 Draw a Pattern:</span> <br> Take a blank piece of paper and draw either a wave line or a spiral.</li>
+                        <li><span>#2 Upload the Image:</span> <br> Take a clear picture of your drawing and upload it to the website.</li>
+                        <li><span>#3 View the Results:</span> <br> The system will process the image using AI and display the results.</li>
+                    </ol>
+                    <div class="how-to-images">
+                        <img src="{{ url_for('static', filename='Assets/spiral.png') }}" alt="Spiral Example">
+                        <img src="{{ url_for('static', filename='Assets/wave.png') }}" alt="Wave Example">
+                        <img src="{{ url_for('static', filename='Assets/spiralTut.png') }}" alt="Circle Example">
+                        <img src="{{ url_for('static', filename='Assets/waveTut.png') }}" alt="Lines Example">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="social-icons">
+                        <a href="https://www.twitter.com" target="_blank">
+                            <img src="{{ url_for('static', filename='Assets/XWLogo.png') }}" alt="X Logo">
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img src="{{ url_for('static', filename='Assets/IGW Logo.png') }}" alt="Instagram Logo">
+                        </a>
+                        <a href="https://www.youtube.com" target="_blank">
+                            <img src="{{ url_for('static', filename='Assets/YTW Logo.png') }}" alt="YouTube Logo">
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank">
+                            <img src="{{ url_for('static', filename='Assets/LinkedInW Logo.png') }}" alt="LinkedIn Logo">
+                        </a>
+                    </div>                    
+                    <p class="footer-title">ParkVision</p>
+                    <p class="footer-description">
+                        ParkVision is an AI platform that uses image analysis of drawing tests to detect early Parkinson’s tremor patterns, aiding accurate diagnosis and improved patient outcomes.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="explore">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="{{ url_for('home') }}">Home</a></li>
+                            <li><a href="{{ url_for('upload') }}">Result</a></li>
+                            <li><a href="{{ url_for('aboutus') }}">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="resources">
+                        <h4>Resources</h4>
+                        <a href="#">FAQs</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Help Center</a>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-copyright">
+                &copy; 2024 ParkVision. All Rights Reserved.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

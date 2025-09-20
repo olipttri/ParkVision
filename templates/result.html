@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkVision - Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        console.log("URL Query Parameters:", window.location.search);
+        console.log("Extracted 'result':", params.get("result"));
+        console.log("Extracted 'image':", params.get("image"));
+    </script>
+    <script defer src="{{ url_for('static', filename='result.js') }}"></script>    
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="nav-container">
+                <div class="logo-container">
+                    <img src="{{ url_for('static', filename='Assets/WebLogo.png') }}" alt="ParkVision Logo">
+                </div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('upload') }}">Result</a></li>
+                        <li><a href="{{ url_for('aboutus') }}">About Us</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="{{ url_for('register') }}" class="register-btn">Register</a>
+                </div>
+            </div>
+        </header>
+
+        <section id="get-started">
+            <div class="get-started-container">
+                <div class="text-section">
+                    <h1 class="blue-heading">Let’s Get Started!</h1>
+                    <p class="italic-subtext">Parkinson Detection</p>
+                </div>
+                <div class="image-section">
+                    <img src="{{ url_for('static', filename='Assets/HandTremor.png') }}" alt="Hand Tremor" class="hand-tremor-img">
+                </div>
+            </div>
+        </section>
+        
+        <section id="main-container">
+            <div class="upload-container">
+                <h1>Result</h1>
+                <p>Check your results!</p>
+                <div class="upload-box">
+                    <img id="resultImage" src="{{ url_for('uploaded_file', filename=request.args.get('image', '')) }}" alt="Uploaded Drawing">
+                </div>
+                <div class="result-buttons">
+                    <button onclick="saveResult()" class="save-btn">Save Result</button>
+                    <button onclick="location.href='{{ url_for('home') }}'" class="back-btn">Back to Main Page</button>
+                </div>
+            </div>
+        
+            <div class="result-right">
+                <h2 class="result-title">Processing...</h2> 
+                <p id="result-description" class="result-description">
+                    Your image is currently being processed. Please wait...
+                </p>
+                <p class="result-note">
+                    ⓘ This AI tool is not 100% accurate, so it’s best used as an initial screening step rather than a definitive diagnosis.
+                </p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="social-icons">
+                        <a href="https://www.twitter.com" target="_blank">
+                            <img src="{{ url_for('static', filename='Assets/XWLogo.png') }}" alt="X Logo">
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img src="{{ url_for('static', filename='Assets/IGW Logo.png') }}" alt="Instagram Logo">
+                        </a>
+                        <a href="https://www.youtube.com" target="_blank">
+                            <img src="{{ url_for('static', filename='Assets/YTW Logo.png') }}" alt="YouTube Logo">
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank">
+                            <img src="{{ url_for('static', filename='Assets/LinkedInW Logo.png') }}" alt="LinkedIn Logo">
+                        </a>
+                    </div>
+                    <p class="footer-title">ParkVision</p>
+                    <p class="footer-description">
+                        ParkVision is an AI platform that uses image analysis of drawing tests to detect early Parkinson’s tremor patterns, aiding accurate diagnosis and improved patient outcomes.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="explore">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="{{ url_for('home') }}">Home</a></li>
+                            <li><a href="{{ url_for('upload') }}">Result</a></li>
+                            <li><a href="{{ url_for('aboutus') }}">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="resources">
+                        <h4>Resources</h4>
+                        <a href="#">FAQs</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Help Center</a>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-copyright">
+                &copy; 2024 ParkVision. All Rights Reserved.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
